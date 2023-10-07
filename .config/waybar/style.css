@@ -1,0 +1,210 @@
+@import 'colors-waybar.css';
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: OperatorMono Nerd Font, monospace;
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0.4);
+    /* background: transparent; */
+    /* background: rgba(36, 40, 59, 0.8); */
+    background: @background;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    color: @foreground;
+}
+
+#workspaces {
+	background-color: @background;
+	margin: 5px;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+#workspaces button {
+    padding: 5px 10px 5px 5px;
+    color: @color7;
+}
+
+#workspaces button.focused {
+    color: @background;
+    background-color: #7aa2f7;
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+	background-color: @color7;
+	color: @background;
+	border-radius: 5px;
+}
+
+#workspaces button.active {
+  background-color: @background;
+  color: @color8;
+  border-radius: 5px;
+}
+
+#gamemode, #custom-chatgpt, #custom-date, #custom-updates, #custom-pacman, #custom-weather, #cpu, #memory, #temperature, #clock, #battery, #pulseaudio, #network, #window, #tray, #language , #custom-seperator {
+	background-color: @background;
+	padding: 5px 10px;
+	margin: 5px 0px;
+}
+
+/* #custom-date { */
+/* 	color: #7dcfff; */
+/*   border-radius: 5px 0px 0px 5px; */
+/*   margin-left: 10px; */
+/* } */
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 30%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+#window {
+  border-radius: 5px;
+  color: @background;
+  /* animation: gradient 7s ease infinite; */
+  /* background: linear-gradient(52deg, rgba(148,226,213,1) 0%, rgba(137,220,235,1) 19%, rgba(116,199,236,1) 43%, rgba(137,180,250,1) 56%, rgba(180,190,254,1) 80%, rgba(186,187,241,1) 100%); */
+  /* background: linear-gradient(52deg, @color7 0%, @color2 19%, @color3 43%, @color4 56%, @coloe5 80%, @color6 100%); */
+  /* background-size: 400% 400%; */
+  background-color: @foreground;
+}
+
+#custom-power {
+	color: @background;
+	background-color: @color2;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	padding: 5px 10px;
+}
+
+#custom-button {
+	color: @background;
+	background-color: @color5;
+	border-radius: 5px 5px 5px 5px;
+	margin-right: 10px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 10px;
+	padding: 5px 12px 5px 8px;
+}
+
+#clock {
+    color: @color13;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 10px;
+}
+
+#battery {
+    color: #9ece6a;
+}
+
+#battery.charging {
+    color: #9ece6a;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: @background;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#network {
+	color: @color6;
+	border-radius: 5px 0px 0px 5px;
+}
+
+#pulseaudio {
+	color: @color8;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#pulseaudio.microphone {
+    color: @color5;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 10px;
+}
+
+#custom-updates {
+    color: @color7;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 10px;
+}
+
+#custom-pacman {
+    color: @color4;
+}
+
+#language {
+    /* background: @color7; */
+    color: @color7;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 10px;
+    /* padding: 5px 10px; */
+
+}
+
+#custom-weather {
+    color: @color5;
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 10px;
+}
+
+#cpu {
+    color: @color2;
+    border-radius: 5px 0px 0px 5px;
+}
+
+#memory {
+    color: @color3;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#temperature {
+    color: @color4;
+    border-radius: 0px 5px 5px 0px;
+    margin-right: 10px;
+}
+
+#tray {
+    border-radius: 5px 5px 5px 5px;
+    margin-right: 10px;
+}
+#custom-chatgpt {
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 8px;
+    margin-right: 10px;
+}
+#gamemode {
+  color: @color8;
+  border-radius: 5px 5px 5px 5px;
+  margin-right: 10px;
+}
+#custom-seperator {
+    color: @color1;
+}
+#mpd {
+    border-radius: 5px 5px 5px 5px;
+    color: @background;
+    animation: gradient 7s ease infinite;
+    background: linear-gradient(52deg, @color7 0%, @color2 19%, @color3 43%, @color4 56%, @coloe5 80%, @color6 100%);
+    background-size: 400% 400%;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    margin-right: 10px;
+}

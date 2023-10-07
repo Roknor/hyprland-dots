@@ -1,0 +1,240 @@
+{
+    "position": "top", 
+    "layer": "top",
+    "height": 30,
+    "modules-left": ["custom/button", "hyprland/workspaces", "cpu", "memory", "temperature", "custom/weather"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["mpd","gamemode", "custom/chatgpt", "network", "custom/pacman", "custom/updates", "pulseaudio", "pulseaudio#microphone", "tray", "hyprland/language", "clock", "custom/power"],
+
+    // Modules configuration
+	"hyprland/workspaces": {
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+		"all-outputs": true,
+    "on-click": "activate",
+		"format": "{icon}",
+	 	"persistent_workspaces": {
+	 		"1": [],
+	 		"2": [],
+	 		"3": [],
+	 		"4": [],
+	 		"5": [],
+	 		"6": [],
+	 		"7": [],
+	 		"8": [],
+	 		"9": [],
+   		"10": []
+	  },
+    "format-icons": {
+          "1": "󰋞",
+          "2": "󰖟",
+          "3": "",
+          "4": "󱩼",
+          "5": "󰏘",
+          "6": "󰿎",
+          "7": "󰙅",
+          "8": "",
+          "9": "󰊢",
+          "10": "󰝚"
+    }
+  },
+
+  "gamemode": {
+    "format": "{glyph}",
+    "format-alt": "{glyph} {count}",
+    "glyph": "",
+    "hide-not-running": true,
+    "use-icon": true,
+    "icon-name": "input-gaming-symbolic",
+    "icon-spacing": 4,
+    "icon-size": 16,
+    "tooltip": true,
+    "tooltip-format": "Games running: {count}"
+  },
+
+  "custom/chatgpt": {
+    "format": "󰹻 ",
+    "interval": "once",
+    "on-click": "firefox https://chat.openai.com",
+    "tooltip": false
+  },
+
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "EN",
+    "format-lt": "LT",
+    "on-click": "hyprctl switchxkblayout evision-rgb-keyboard next",
+    "tooltip": false
+  },
+
+	"custom/date": {
+    		"format": "󰸗 {}",
+		"interval": 3600,
+		"exec": "$HOME/bin/waybar-date.sh"
+	},
+
+  "custom/power": {
+          "format": "󰐥",
+          "interval": "once",
+          "on-click": "wlogout",
+          "tooltip": false
+  },
+  
+  "custom/button": {
+          "format": "󰣇",
+          "interval": "once",
+          "on-click": "sh -c '(killall rofi || rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-4.rasi)' & disown",
+          "tooltip": false
+  },
+  
+	"clock": {
+		"format": "󰅐 {:%H:%M}",
+        	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        	"format-alt": "{:%Y-%m-%d}"
+	},
+
+	"battery": {
+        	"states": {
+            		"warning": 30,
+            		"critical": 15
+        	},
+        	"format": "{icon} {capacity}%",
+        	"format-charging": "󰂄 {capacity}%",
+        	"format-plugged": "󰂄{capacity}%",
+        	"format-alt": "{time} {icon}",
+        	"format-full": "󱈑 {capacity}%",
+        	"format-icons": ["󱊡", "󱊢", "󱊣"]
+	},
+  
+	"network": {
+          "interval": 5,
+          "format-ethernet": "󰌘",
+          "format-disconnected": "",
+          "format-alt": " {ipaddr}/{cidr}",
+          "tooltip": false,
+        	"format-wifi": "  {essid}",
+        	"format-linked": "{ifname} (No IP) "
+	},
+
+	"pulseaudio": {
+		"format": "{icon} {volume}%",
+        	"format-muted": "󰖁 Muted",
+        "format-icons": {
+            "headphone": "",
+            "hdmi": "󰡁",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pamixer -t",
+        "on-click-right": "killall pavucontrol || pavucontrol",
+        "on-scroll-up": "pamixer -i 5",
+        "on-scroll-down": "pamixer -d 5",
+        "scroll-step": 5
+  },
+
+  "pulseaudio#microphone": {
+      "format": "{format_source}",
+      "tooltip": false,
+      "format-source": " {volume}%",
+      "format-source-muted": " Muted",
+      "on-click": "pamixer --default-source -t",
+      "on-scroll-up": "pamixer --default-source -i 5",
+      "on-scroll-down": "pamixer --default-source -d 5",
+      "scroll-step": 5
+  },
+
+  "custom/pacman": {
+    "format": "󰇚 {}",
+    "interval": 3600,                     // every hour
+    "exec": "checkupdates | wc -l",       // # of updates
+    "exec-if": "exit 0",                  // always run; consider advanced run conditions
+    "on-click": "termite -e 'sudo pacman -Syu'; pkill -SIGRTMIN+8 waybar", // update system
+    "signal": 8
+  },
+
+  "custom/updates": {
+      "exec": "(paru -Qua) | wc -l",
+      "interval": 21600,
+      "format": " {}",
+      "on-click": "termite -e 'paru -Qua | wc -l'; pkill -SIGRTMIN+9 waybar", // update system
+  },
+
+  "hyprland/window": {
+      "format": "{initialTitle}",
+      "max-length": 32,
+      "seperate-outputs": true
+  },
+
+  "tray": {
+          "icon-size": 15,
+          "tooltip": false,
+          "spacing": 10,
+          "show-passive-items": true
+  },
+
+  "custom/weather" : {
+          "tooltip" : true,
+          "format" : "{}",
+          "restart-interval" : 300,
+          "exec" : "~/.config/waybar/scripts/waybar-wttr.py",
+          "return-type" : "json",
+          "on-click": "killall kweather || kweather"
+  },
+
+  "cpu": {
+          "interval": 10,
+          "format": " {}%",
+          "max-length": 10,
+          "on-click": "killall gnome-system-monitor || gnome-system-monitor"
+  },
+
+  "temperature": {
+          "hwmon-path-abs": "/sys/devices/pci0000:00/0000:00:18.3/hwmon",
+          "input-filename": "temp1_input",
+          "critical-threshold": 90,
+          "interval": 5,
+          "format": "{icon} {temperatureC}°",
+          "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          "tooltip": false,
+          "on-click": "killall psensor || psensor"
+  },
+
+  "memory": {
+      "interval": 30,
+      "format": " {}%",
+      "format-alt":" {used:0.1f}G",
+      "max-length": 10
+  },  
+
+  "custom/gpu-usage": {
+    "exec": "cat /sys/class/hwmon/hwmon3/device/gpu_busy_percent",
+    "format": "GPU: {}%",
+    "return-type": "",
+    "interval": 1
+  },
+
+  "mpd": {
+      "format": "{stateIcon} {elapsedTime:%M:%S}/{totalTime:%M:%S} 󰋋 {volume}%",
+      "state-icons": {
+          "playing": "",
+          "paused": ""
+      },
+      "on-click": "mpc toggle",
+      "on-scroll-up": "mpc volume +5",
+      "on-scroll-down": "mpc volume -5",
+      "on-click-right": "mpc next",
+      "max-length": 30,
+      "tooltip": true,
+      "tooltip-format": "{artist} - {title} / {album}"
+  }
+}
