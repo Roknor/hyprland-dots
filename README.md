@@ -71,3 +71,13 @@ paru -S obs-studio ffmpeg-obs cef-minimal-obs-rc-bin   \
 pipewire pipewire-alsa pipewire-audio pipewire-pulse   \
 pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
 ```
+
+### Some mouse interactivity on waybar modules
+```sh
+paru -S pavuctl checkupdates gnome-system-monitor       \
+kweather psensor
+```
+
+## Post installation actions
+- VSCode theme is set by [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) addon. So you might want to install that one.
+- Spotify's theme can be controlled by [Spicetify](https://github.com/spicetify). It's a little iffy but it works.
