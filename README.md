@@ -31,7 +31,7 @@ ttf-icomoon-feather xdg-desktop-portal-hyprland-git     \
 xdotool xwaylandvideobridge-cursor-mode-2-git cliphist  \
 qt5-imageformats qt5ct
 ```
-
+i
 ### Rofi theme
 ```sh
 git clone --depth=1 https://github.com/adi1090x/rofi.git
@@ -79,5 +79,7 @@ kweather psensor
 ```
 
 ## Post installation actions
+- **bin** directory contains the 2 python files the color switching. *thunar-wall.py* switch theme with thunar's right click > "Set as Theme". The only requirement for this to work is havign no special symbols spaces in the image's path (this includes the filename).
+- *wallswitcher.py* picks a random wallpaper. You will need to edit it to set the wallpaper folder. The default shortcut for it is **SUPER+CTRL+W**.
 - VSCode theme is set by [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) addon. So you might want to install that one.
 - Spotify's theme can be controlled by [Spicetify](https://github.com/spicetify). It's a little iffy but it works.
