@@ -46,7 +46,7 @@ chmod +x setup.sh
 ```sh
 paru -S btop cava neofetch noise-suppression-for-voice  \
 rofi-lbonn-wayland-git rofi-emoji starship zsh viewnior \
-ocs-url
+ocs-url xembed-sni-proxy-git
 ```
 
 ### Browser and file manager
@@ -79,7 +79,7 @@ pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
 paru -S pavuctl checkupdates gnome-system-monitor       \
 kweather psensor
 ```
-
+j
 ## Post installation actions
 ![Right click menu screenshot](/assets/right-click-menu.png "Screenshot 4")
 - **bin** directory contains the 2 python files the color switching. *thunar-wall.py* switch theme with thunar's right click > "Set as Theme". The only requirement for this to work is havign no special symbols spaces in the image's path (this includes the filename).
