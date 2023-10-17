@@ -34,7 +34,6 @@ ttf-icomoon-feather xdg-desktop-portal-hyprland-git     \
 xdotool xwaylandvideobridge-cursor-mode-2-git cliphist  \
 qt5-imageformats qt5ct
 ```
-i
 ### Rofi theme
 ```sh
 git clone --depth=1 https://github.com/adi1090x/rofi.git
