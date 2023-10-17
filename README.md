@@ -1,3 +1,6 @@
+![Screenshot 1](/assets/01.png "Screenshot 1")
+![Screenshot 2](/assets/02.png "Screenshot 2")
+![Screenshot 3](/assets/03.png "Screenshot 3")
 # Hyprland-dots
 
 * Window Manager - [Hyprland](https://github.com/hyprwm/Hyprland)
@@ -79,6 +82,7 @@ kweather psensor
 ```
 
 ## Post installation actions
+![Right click menu screenshot](/assets/right-click-menu.png "Screenshot 4")
 - **bin** directory contains the 2 python files the color switching. *thunar-wall.py* switch theme with thunar's right click > "Set as Theme". The only requirement for this to work is havign no special symbols spaces in the image's path (this includes the filename).
 - *wallswitcher.py* picks a random wallpaper. You will need to edit it to set the wallpaper folder. The default shortcut for it is **SUPER+CTRL+W**.
 - VSCode theme is set by [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) addon. So you might want to install that one.
