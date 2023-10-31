@@ -102,16 +102,13 @@ kweather psensor
 * VSCode theme is set by [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) addon. So you might want to install that one.
 * Spotify's theme can be controlled by [Spicetify](https://github.com/spicetify). It's a little iffy but it works.
 
-
 ## Keybinds
-
 
 ### Screen Capture
 
 **PrintScreen** - screenshot  
 **SUPER+V** - start video capture  
 **SUPER+Shift+V** - stop video capture  
-
 
 ### Misc
 
@@ -125,7 +122,6 @@ kweather psensor
 **SUPER+CTRL+B** - hide Waybar  
 **SUPER+CTRL+W** - switch to random wallpaper  
 
-
 ### Window management
 
 **SUPER+Q** - close window  
@@ -138,14 +134,12 @@ kweather psensor
 **SUPER+TAB** - switch to next window in group
 **SUPER+SHIFT+TAB** - switch to previous window in group
 
-
 ### Window navigation
 
 **SUPER + H/J/K/L** or **SUPER + arrow keys** = Move window focus  
 **SUPER + SHIFT + H/J/K/L** or **SUPER + SHIFT + arrow keys** = Move selected window  
 **SUPER + CTRL + H/J/K/L** or **SUPER + CTRL + arrow keys** = Change window size  
 **ALT+TAB** - switch to next window  
-
 
 ### Workspace management
 
@@ -177,7 +171,6 @@ kweather psensor
 
 **SUPER+SHIFT+SPACE** - toggle floating mode  
 **SUPER+SHIFT+P** - toggle pseudo-tile mode  
-
 
 ### Monitor Controls
 
