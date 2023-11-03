@@ -4,7 +4,7 @@
     "height": 30,
     "modules-left": ["custom/button", "hyprland/workspaces", "cpu", "memory", "temperature", "custom/weather"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["mpd","gamemode", "custom/chatgpt", "network", "custom/pacman", "custom/updates", "pulseaudio", "pulseaudio#microphone", "tray", "hyprland/language", "clock", "custom/power"],
+    "modules-right": ["mpd", "custom/chatgpt", "network", "custom/pacman", "custom/updates", "pulseaudio", "pulseaudio#microphone", "tray", "hyprland/language", "clock", "custom/power"],
 
     // Modules configuration
 	"hyprland/workspaces": {
@@ -28,11 +28,11 @@
     "format-icons": {
           "1": "󰋞",
           "2": "󰖟",
-          "3": "",
+          "3": "",
           "4": "󱩼",
           "5": "󰏘",
           "6": "󰿎",
-          "7": "󰙅",
+          "7": "",
           "8": "",
           "9": "󰊢",
           "10": "󰝚"
@@ -164,7 +164,7 @@
   },
 
   "hyprland/window": {
-      "format": "{initialTitle}",
+      "format": "{}",
       "max-length": 32,
       "seperate-outputs": true
   },
@@ -235,6 +235,8 @@
       "on-click-right": "mpc next",
       "max-length": 30,
       "tooltip": true,
-      "tooltip-format": "{artist} - {title} / {album}"
+      "tooltip-format": "{artist} - {title}",
+      "unknown-tag": "MPD"
   }
+    
 }

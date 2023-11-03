@@ -3,16 +3,15 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrainsMono Nerd Font, monospace;
+    font-family: OperatorMono Nerd Font, monospace;
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
 }
 
 window#waybar {
-    background-color: rgba(0, 0, 0, 0.4);
+    /* background: rgba(0, 0, 0, 0.4); */
     /* background: transparent; */
-    /* background: rgba(36, 40, 59, 0.8); */
     background: @background;
     transition-property: background-color;
     transition-duration: 0.5s;
@@ -204,6 +203,30 @@ window#waybar {
     animation: gradient 7s ease infinite;
     background: linear-gradient(52deg, @color7 0%, @color2 19%, @color3 43%, @color4 56%, @coloe5 80%, @color6 100%);
     background-size: 400% 400%;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    margin-right: 10px;
+}
+#mpd.stopped {
+    border-radius: 5px 5px 5px 5px;
+    color: @background;
+    background: @color2;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    margin-right: 10px;
+}
+#mpd.paused {
+    border-radius: 5px 5px 5px 5px;
+    color: @background;
+    background: @color5;
+    padding: 5px 10px;
+    margin: 5px 0px;
+    margin-right: 10px;
+}
+#mpd.disconnected {
+    border-radius: 5px 5px 5px 5px;
+    color: @foreground;
+    background: @background;
     padding: 5px 10px;
     margin: 5px 0px;
     margin-right: 10px;
