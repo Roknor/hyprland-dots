@@ -4,7 +4,7 @@
     "height": 30,
     "modules-left": ["custom/button", "hyprland/workspaces", "cpu", "memory", "temperature", "custom/weather"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["mpd", "custom/chatgpt", "network", "custom/pacman", "custom/updates", "pulseaudio", "pulseaudio#microphone", "tray", "hyprland/language", "clock", "custom/power"],
+    "modules-right": ["mpd", "network", "custom/pacman", "custom/updates", "pulseaudio", "pulseaudio#microphone", "tray", "hyprland/language", "clock", "custom/power"],
 
     // Modules configuration
 	"hyprland/workspaces": {
@@ -50,13 +50,6 @@
     "icon-size": 16,
     "tooltip": true,
     "tooltip-format": "Games running: {count}"
-  },
-
-  "custom/chatgpt": {
-    "format": "󰹻 ",
-    "interval": "once",
-    "on-click": "firefox https://chat.openai.com",
-    "tooltip": false
   },
 
   "hyprland/language": {
@@ -110,10 +103,11 @@
           "interval": 5,
           "format-ethernet": "󰌘",
           "format-disconnected": "",
-          "format-alt": " {ipaddr}/{cidr}",
-          "tooltip": false,
+          "tooltip-format": " {ipaddr}/{cidr}",
+          "tooltip": true,
         	"format-wifi": "  {essid}",
-        	"format-linked": "{ifname} (No IP) "
+        	"format-linked": "{ifname} (No IP) ",
+          "on-click": "killall nm-connection-editor || nm-connection-editor"
 	},
 
 	"pulseaudio": {
@@ -129,8 +123,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pamixer -t",
-        "on-click-right": "killall pavucontrol || pavucontrol",
+        "on-click-right": "pamixer -t",
+        "on-click": "killall pavucontrol || pavucontrol",
         "on-scroll-up": "pamixer -i 5",
         "on-scroll-down": "pamixer -d 5",
         "scroll-step": 5
@@ -141,7 +135,7 @@
       "tooltip": false,
       "format-source": " {volume}%",
       "format-source-muted": " Muted",
-      "on-click": "pamixer --default-source -t",
+      "on-click-right": "pamixer --default-source -t",
       "on-scroll-up": "pamixer --default-source -i 5",
       "on-scroll-down": "pamixer --default-source -d 5",
       "scroll-step": 5
@@ -160,7 +154,7 @@
       "exec": "(paru -Qua) | wc -l",
       "interval": 21600,
       "format": " {}",
-      "on-click": "termite -e 'paru -Qua | wc -l'; pkill -SIGRTMIN+9 waybar", // update system
+      "on-click": "termite -e 'paru -Qua | wc -l'; pkill -SIGRTMIN+9 waybar" // update system
   },
 
   "hyprland/window": {

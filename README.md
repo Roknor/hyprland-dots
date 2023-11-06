@@ -90,7 +90,7 @@ pipewire-jack wireplumber gst-plugin-pipewire pavucontrol
 
 ```sh
 paru -S pavuctl checkupdates gnome-system-monitor       \
-kweather psensor
+kweather psensor network-manager-applet
 ```
 
 ## Post installation actions
