@@ -11,19 +11,24 @@ os.system(f'swww img -t wipe --transition-duration 3 {image_path}')
 # Generarte Pywal colorscheme
 os.system(f'wal -i {image_path}')
 # Make a hard copy of the colorscheme
-os.system(f'cp ~/.cache/wal/colors-dunst ~/.config/dunst/dunstrc') # dunst
-os.system(f'cp ~/.cache/wal/colors-hyprland.conf ~/.config/hypr/colors-hyprland.conf') # hyprland
-os.system(f'killall dunst && dunst & disown') # restart dunst to apply new theme
-os.system(f'cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/') # waybar
-os.system(f'cp ~/.cache/wal/colors-kitty.conf ~/.config/kitty/') # kitty also needed to apply the colorscheme to all new windows after wallpaper change
-os.system(f'cp ~/.cache/wal/colors-waybar.css ~/.config/wlogout/color-wlogout.css') # wlogout
-os.system(f'cp ~/.cache/wal/colors-swaylock ~/.config/swaylock/config') # swaylock
-os.system(f'cp ~/.cache/wal/colors-cava ~/.config/cava/config') # cava
-os.system(f'cp ~/.cache/wal/colors-rofi.rasi ~/.config/rofi/colors/colors-rofi.rasi') # rofi
-os.system(f'cp ~/.cache/wal/colors-spicetify.ini ~/.config/spicetify/Themes/wal/color.ini') # spotify
-os.system(f'spicetify apply') # apply spotify theme
-os.system(f'cp ~/.cache/wal/colors-btop.theme ~/.config/btop/themes/wal.theme') # btop
-os.system(f'pywalfox update') # apply firefox theme
+os.system(f'cp ~/.cache/wal/colors-dunst ~/.config/dunst/dunstrc')  # dunst
+# hyprland
+os.system(f'cp ~/.cache/wal/colors-hyprland.conf ~/.config/hypr/colors-hyprland.conf')
+# restart dunst to apply new theme
+os.system(f'killall dunst && dunst & disown')
+os.system(f'cp ~/.cache/wal/colors-waybar.css ~/.config/waybar/')  # waybar
+# kitty also needed to apply the colorscheme to all new windows after wallpaper change
+os.system(f'cp ~/.cache/wal/colors-kitty.conf ~/.config/kitty/')
+# wlogout
+os.system(f'cp ~/.cache/wal/colors-waybar.css ~/.config/wlogout/color-wlogout.css')
+os.system(f'cp ~/.cache/wal/colors-swaylock ~/.config/swaylock/config')  # swaylock
+os.system(f'cp ~/.cache/wal/colors-cava ~/.config/cava/config')  # cava
+os.system(f'cp ~/.cache/wal/colors-rofi.rasi ~/.config/rofi/colors/colors-rofi.rasi')  # rofi
+# spotify
+os.system(f'cp ~/.cache/wal/colors-spicetify.ini ~/.config/spicetify/Themes/wal/color.ini')
+os.system(f'spicetify apply')  # apply spotify theme
+os.system(f'cp ~/.cache/wal/colors-btop.theme ~/.config/btop/themes/wal.theme')  # btop
+os.system(f'pywalfox update')  # apply firefox theme
 # Reload waybar to apply colorscheme
 os.system(f'killall -SIGUSR2 waybar')
 # Send a notification
