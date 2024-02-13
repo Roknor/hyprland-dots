@@ -3,9 +3,9 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrains Nerd Font, monospace;
+    font-family: FontAwesome, monospace;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     min-height: 0;
 }
 
@@ -47,7 +47,7 @@ window#waybar {
   border-radius: 5px;
 }
 
-#gamemode, #custom-chatgpt, #custom-date, #custom-updates, #custom-pacman, #custom-weather, #cpu, #memory, #temperature, #clock, #battery, #network, #window, #tray, #language , #custom-bars, #custom-tile, #pulseaudio, #pulseaudio-slider {
+#gamemode, #custom-chatgpt, #custom-date, #custom-updates, #custom-pacman, #custom-weather, #cpu, #memory, #temperature, #clock, #battery, #network, #window, #tray, #language , #custom-bars, #custom-tile, #pulseaudio, #pulseaudio-slider, #custom-quit, #custom-lock, #custom-reboot {
 	background-color: @background;
 	padding: 5px 10px;
 	margin: 5px 0px;
@@ -275,4 +275,15 @@ window#waybar {
 #custom-tile {
     border-radius: 5px 0px 0px 5px;
 }
-
+#custom-reboot {
+    margin-right: 10px;
+}
+#custom-reboot {
+    color: @color2;
+}
+#custom-lock {
+    color: @color3;
+}
+#custom-quit {
+    color: @color4;
+}

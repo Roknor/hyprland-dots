@@ -4,7 +4,7 @@
     "height": 30,
     "modules-left": ["custom/button", "hyprland/workspaces", "cpu", "memory", "temperature", "custom/weather"],
     // "modules-center": ["hyprland/window"],
-    "modules-right": ["mpd", "network", "custom/pacman", "custom/updates", "group/audio", "tray", "hyprland/language", "group/time", "custom/tile", "custom/bars", "custom/power"],
+    "modules-right": ["mpd", "network", "custom/pacman", "custom/updates", "group/audio", "tray", "hyprland/language", "group/time", "custom/tile", "custom/bars", "group/group-power"],
 
     // Modules configuration
 	"hyprland/workspaces": {
@@ -26,7 +26,7 @@
    		"10": []
 	  },
     "format-icons": {
-          "1": "󰋞",
+          "1": "",
           "2": "󰖟",
           "3": "",
           "4": "󱩼",
@@ -66,18 +66,12 @@
 		"exec": "$HOME/bin/waybar-date.sh"
 	},
 
-  "custom/power": {
-          "format": "󰐥",
-          "interval": "once",
-          "on-click": "wlogout",
-          "tooltip": false
-  },
-  
   "custom/button": {
           "format": "󰣇",
           "interval": "once",
           "on-click": "sh -c '(killall rofi || rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-4.rasi)' & disown",
-          "tooltip": false
+          "tooltip": false,
+          "escape": true
   },
 
   "custom/bars": {
@@ -268,6 +262,48 @@
       "tooltip": true,
       "tooltip-format": "{artist} - {title}",
       "unknown-tag": "MPD"
+  },
+
+  "group/group-power": {
+      "orientation": "inherit",
+      "drawer": {
+          "transition-duration": 500,
+          "children-class": "not-power",
+          "transition-left-to-right": false
+      },
+
+      "modules": [
+          "custom/power", // First element is the "group leader" and won't ever be hidden
+          "custom/quit",
+          "custom/lock",
+          "custom/reboot"
+      ]
+  },
+
+  "custom/quit": {
+      "format": "󰜶",
+      "tooltip": true,
+      "tooltip-format": "Log Out",
+      "on-click": "hyprctl dispatch exit"
+  },
+
+  "custom/lock": {
+      "format": "󰌾",
+      "tooltip": true, 
+      "tooltip-format": "Lock screen",
+      "on-click": "swaylock"
+  },
+
+  "custom/reboot": {
+      "format": "",
+      "tooltip": true,
+      "tooltip-format": "Reboot",
+      "on-click": "reboot"
+  },
+  "custom/power": {
+      "format": "󰐥",
+      "tooltip": true,
+      "tooltip-format": "Power menu",
+      "on-click": "wlogout"
   }
-    
 }
