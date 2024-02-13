@@ -36,7 +36,7 @@ qt5-quickcontrols2 qt5-wayland qt6-wayland swww         \
 ttf-font-awesome tumbler ttf-jetbrains-mono             \
 ttf-icomoon-feather xdg-desktop-portal-hyprland-git     \
 xdotool xwaylandvideobridge-cursor-mode-2-git cliphist  \
-qt5-imageformats qt5ct
+qt5-imageformats qt5ct swayosd-git
 ```
 
 ### Rofi theme
@@ -53,7 +53,8 @@ chmod +x setup.sh
 ```sh
 paru -S btop cava neofetch noise-suppression-for-voice  \
 rofi-lbonn-wayland-git rofi-emoji starship zsh viewnior \
-ocs-url ```
+ocs-url 
+```
 
 ### Browser and file manager
 
@@ -101,78 +102,81 @@ kweather psensor network-manager-applet
 * VSCode theme is set by [Wal Theme](https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme) addon. So you might want to install that one.
 * Spotify's theme can be controlled by [Spicetify](https://github.com/spicetify). It's a little iffy but it works.
 * If you want Wine systray icons to be show in waybar, you need [xembed-sni-proxy](https://github.com/davidedmundson/xembed-sni-proxy), which is a part of KDE Plasma now, and has been removed from AUR.
+* *NEW* Install Hyprland plugins:
+```sh
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+
+```
 
 ## Keybinds
 
 ### Screen Capture
 
-**PrintScreen** - screenshot
-**SUPER+V** - start video capture
-**SUPER+Shift+V** - stop video capture
+**PrintScreen** - screenshot  
+**SUPER+V** - start video capture  
+**SUPER+Shift+V** - stop video capture  
 
 ### Misc
 
-**SUPER+SHIFT+X** - color picker
-**CTRL+ALT+L** - Wlogout menu
-**SUPER+D** - Rofi launcher
-**SUPER+ENTER** - terminal
-**SUPER+E** - file manager
-**SUPER+B** - browser
-**SUPER+SHIFT+B** - reload Waybar
-**SUPER+CTRL+B** - hide Waybar
-**SUPER+CTRL+W** - switch to random wallpaper
+**SUPER+SHIFT+X** - color picker  
+**CTRL+ALT+L** - Wlogout menu  
+**SUPER+D** - Rofi launcher  
+**SUPER+ENTER** - terminal  
+**SUPER+E** - file manager  
+**SUPER+B** - browser  
+**SUPER+SHIFT+B** - reload Waybar  
+**SUPER+CTRL+B** - hide Waybar  
+**SUPER+CTRL+W** - switch to random wallpaper  
+**CTRL+ALT+X** - toggle bars  
 
 ### Window management
 
-**SUPER+Q** - close window
-**SUPER+SHIFT+Q** - kill Hyprland
-**SUPER+SPACE** - toggle floating
-**SUPER+P** - toggle pseudo-tile
-**SUPER+S** - rotate split in dwindle layout
-**SUPER+F** - toggle fullscreen active window
-**SUPER+G** - toggle window group
-**SUPER+TAB** - switch to next window in group
-**SUPER+SHIFT+TAB** - switch to previous window in group
+**SUPER+Q** - close window  
+**SUPER+SHIFT+Q** - kill Hyprland  
+**SUPER+SPACE** - toggle floating  
+**SUPER+P** - toggle pseudo-tile  
+**SUPER+S** - rotate split in dwindle layout  
+**SUPER+F** - toggle fullscreen active window  
 
 ### Window navigation
 
-**SUPER + H/J/K/L** or **SUPER + arrow keys** = Move window focus
-**SUPER + SHIFT + H/J/K/L** or **SUPER + SHIFT + arrow keys** = Move selected window
-**SUPER + CTRL + H/J/K/L** or **SUPER + CTRL + arrow keys** = Change window size
-**ALT+TAB** - switch to next window
+**SUPER + H/J/K/L** or **SUPER + arrow keys** = Move window focus  
+**SUPER + SHIFT + H/J/K/L** or **SUPER + SHIFT + arrow keys** = Move selected window  
+**SUPER + CTRL + H/J/K/L** or **SUPER + CTRL + arrow keys** = Change window size  
+**ALT+TAB** - switch to next window  
 
 ### Workspace management
 
-**SUPER+W** - switch to next active workspace
-**SUPER+SHIFT+W** - switch to previous active workspace
-**SUPER+1** - switch to workspace 1
-**SUPER+2** - switch to workspace 2
-**SUPER+3** - switch to workspace 3
-**SUPER+4** - switch to workspace 4
-**SUPER+5** - switch to workspace 5
-**SUPER+6** - switch to workspace 6
-**SUPER+7** - switch to workspace 7
-**SUPER+8** - switch to workspace 8
-**SUPER+9** - switch to workspace 9
-**SUPER+0** - switch to workspace 10
-**SYPER+A** - switch to special workspace
+**SUPER+TAB** - switch to next active workspace  
+**SUPER+SHIFT+TAB** - switch to previous active workspace  
+**SUPER+1** - switch to workspace 1  
+**SUPER+2** - switch to workspace 2  
+**SUPER+3** - switch to workspace 3  
+**SUPER+4** - switch to workspace 4  
+**SUPER+5** - switch to workspace 5  
+**SUPER+6** - switch to workspace 6  
+**SUPER+7** - switch to workspace 7  
+**SUPER+8** - switch to workspace 8  
+**SUPER+9** - switch to workspace 9  
+**SUPER+0** - switch to workspace 10  
+**SYPER+A** - switch to special workspace  
 
-**SUPER+SHIFT+1** - move window to workspace 1
-**SUPER+SHIFT+2** - move window to workspace 2
-**SUPER+SHIFT+3** - move window to workspace 3
-**SUPER+SHIFT+4** - move window to workspace 4
-**SUPER+SHIFT+5** - move window to workspace 5
-**SUPER+SHIFT+6** - move window to workspace 6
-**SUPER+SHIFT+7** - move window to workspace 7
-**SUPER+SHIFT+8** - move window to workspace 8
-**SUPER+SHIFT+9** - move window to workspace 9
-**SUPER+SHIFT+0** - move window to workspace 10
-**SUPER+SHIFT+A** - move window to special workspace
+**SUPER+SHIFT+1** - move window to workspace 1  
+**SUPER+SHIFT+2** - move window to workspace 2  
+**SUPER+SHIFT+3** - move window to workspace 3  
+**SUPER+SHIFT+4** - move window to workspace 4  
+**SUPER+SHIFT+5** - move window to workspace 5  
+**SUPER+SHIFT+6** - move window to workspace 6  
+**SUPER+SHIFT+7** - move window to workspace 7  
+**SUPER+SHIFT+8** - move window to workspace 8  
+**SUPER+SHIFT+9** - move window to workspace 9  
+**SUPER+SHIFT+0** - move window to workspace 10  
+**SUPER+SHIFT+A** - move window to special workspace  
 
-**SUPER+SHIFT+SPACE** - toggle floating mode
-**SUPER+SHIFT+P** - toggle pseudo-tile mode
+**SUPER+SHIFT+SPACE** - toggle floating mode  
+**SUPER+SHIFT+P** - toggle pseudo-tile mode  
 
 ### Monitor Controls
 
-**SUPER+CTRL+.** - focus next Monitor
+**SUPER+CTRL+.** - focus next Monitor  
 **SUPER+Z** - swap workspaces on monitors (you have to set the monitors in the *~/.config/hypr/keybinds.conf* file to make this work)

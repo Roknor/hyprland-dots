@@ -220,11 +220,14 @@ alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign -m "--wip-- [skip ci]"'
 # my aliases
 alias vi='nvim'
+alias v='vim'
 alias py='python'
 alias trek="trekscii $(tput lines) $(tput cols)"
 alias aaf="aafire -driver curses"
-alias paclean="paru -Scc"
+alias paclean="paru -Sccd"
 alias sfetch="~/bin/sysfetch"
 alias pacupg="sudo pacman -Syu"
 alias record="pw-record"
+alias ytdl="python ~/bin/youtube-downloader.py"
+alias lava="lavat -s 8 -c cyan -R 1"
 # vim:ft=zsh
