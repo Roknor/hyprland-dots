@@ -3,8 +3,8 @@
     "layer": "top",
     "height": 30,
     "modules-left": ["custom/button", "hyprland/workspaces", "cpu", "memory", "temperature", "custom/weather"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["mpd", "network", "custom/pacman", "custom/updates", "pulseaudio", "pulseaudio#microphone", "tray", "hyprland/language", "clock", "custom/power"],
+    // "modules-center": ["hyprland/window"],
+    "modules-right": ["mpd", "network", "custom/pacman", "custom/updates", "group/audio", "tray", "hyprland/language", "group/time", "custom/tile", "custom/bars", "custom/power"],
 
     // Modules configuration
 	"hyprland/workspaces": {
@@ -79,7 +79,29 @@
           "on-click": "sh -c '(killall rofi || rofi -show drun -theme ~/.config/rofi/launchers/type-1/style-4.rasi)' & disown",
           "tooltip": false
   },
+
+  "custom/bars": {
+          "format": " ",
+          "interval": "once",
+          "on-click": "python ~/bin/bar-toggle.py"
+  },
+
+  "custom/tile": {
+          "format": "󱪳 ",
+          "interval": "once",
+          "on-click": "hyprctl dispatch workspaceopt allfloat & notify-send -h string:x-canonical-private-synchronous:hypr-cfg -u low 'Workspace Tile Toggled'"
+  },
   
+  "group/time": {
+          "orientation": "inherit",
+          "drawer": {
+            "transition-duration": 500,
+            "children-class": "group-time",
+            "transition-left-to-right": false
+          },
+          "modules": ["clock", "custom/date"]
+  },
+
 	"clock": {
 		"format": "󰅐 {:%H:%M}",
         	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -110,12 +132,21 @@
           "on-click": "killall nm-connection-editor || nm-connection-editor"
 	},
 
+
+  "group/audio": {
+    "orientation": "inherit",
+    "drawer": {
+      "transition-duration": 500,
+      "children-class": "group-audio",
+      "transition-left-to-right": false
+    },
+    "modules": ["pulseaudio", "pulseaudio/slider"]
+  },
 	"pulseaudio": {
 		"format": "{icon} {volume}%",
         	"format-muted": "󰖁 Muted",
         "format-icons": {
             "headphone": "",
-            "hdmi": "󰡁",
             "hands-free": "",
             "headset": "",
             "phone": "",
@@ -123,12 +154,18 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click-right": "pamixer -t",
-        "on-click": "killall pavucontrol || pavucontrol",
-        "on-scroll-up": "pamixer -i 5",
-        "on-scroll-down": "pamixer -d 5",
-        "scroll-step": 5
-  },
+      "on-click-right": "pamixer -t",
+      "on-click": "killall pavucontrol || pavucontrol",
+      "on-scroll-up": "pamixer -i 5",
+      "on-scroll-down": "pamixer -d 5",
+      "scroll-step": 5
+},
+
+  "pulseaudio/slider": {
+  "min": 0,
+  "max": 100,
+  "orientation": "horizontal"
+},
 
   "pulseaudio#microphone": {
       "format": "{format_source}",

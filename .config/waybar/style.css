@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: OperatorMono Nerd Font, monospace;
+    font-family: JetBrains Nerd Font, monospace;
     font-weight: bold;
     font-size: 14px;
     min-height: 0;
@@ -47,17 +47,17 @@ window#waybar {
   border-radius: 5px;
 }
 
-#gamemode, #custom-chatgpt, #custom-date, #custom-updates, #custom-pacman, #custom-weather, #cpu, #memory, #temperature, #clock, #battery, #pulseaudio, #network, #window, #tray, #language , #custom-seperator {
+#gamemode, #custom-chatgpt, #custom-date, #custom-updates, #custom-pacman, #custom-weather, #cpu, #memory, #temperature, #clock, #battery, #network, #window, #tray, #language , #custom-bars, #custom-tile, #pulseaudio, #pulseaudio-slider {
 	background-color: @background;
 	padding: 5px 10px;
 	margin: 5px 0px;
 }
 
-/* #custom-date { */
-/* 	color: #7dcfff; */
-/*   border-radius: 5px 0px 0px 5px; */
-/*   margin-left: 10px; */
-/* } */
+#custom-date {
+	color: @color12;
+  border-radius: 5px 5px 5px 5px;
+  margin-right: 10px;
+}
 
 @keyframes gradient {
 	0% {
@@ -71,14 +71,31 @@ window#waybar {
 	}
 }
 
+@keyframes gradient_f {
+	0% {
+		background-position: 0% 200%;
+	}
+    50% {
+        background-position: 200% 0%;
+    }
+	100% {
+		background-position: 400% 200%;
+	}
+}
+
+@keyframes gradient_f_nh {
+	0% {
+		background-position: 0% 200%;
+	}
+	100% {
+		background-position: 200% 200%;
+	}
+}
+
 #window {
   border-radius: 5px;
-  color: @background;
-  /* animation: gradient 7s ease infinite; */
-  /* background: linear-gradient(52deg, rgba(148,226,213,1) 0%, rgba(137,220,235,1) 19%, rgba(116,199,236,1) 43%, rgba(137,180,250,1) 56%, rgba(180,190,254,1) 80%, rgba(186,187,241,1) 100%); */
-  /* background: linear-gradient(52deg, @color7 0%, @color2 19%, @color3 43%, @color4 56%, @coloe5 80%, @color6 100%); */
-  /* background-size: 400% 400%; */
-  background-color: @foreground;
+  color: @foreground;
+  background-color: @background;
 }
 
 #custom-power {
@@ -130,19 +147,38 @@ window#waybar {
 
 #pulseaudio {
 	color: @color8;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 0px 5px 5px 0px;
+  margin-right: 10px;
+}
+
+#pulseaudio-slider slider {
+    min-height: 0px;
+    min-width: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+}
+#pulseaudio-slider trough {
+    min-height: 5px;
+    min-width: 80px;
+    border-radius: 5px;
+    background-color: black;
+}
+#pulseaudio-slider highlight {
+    min-width: 5px;
+    border-radius: 5px;
+    background-color: green;
 }
 
 #pulseaudio.microphone {
     color: @color5;
     border-radius: 0px 5px 5px 0px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
 }
 
 #custom-updates {
     color: @color7;
-    border-radius: 0px 5px 5px 0px;
-    margin-right: 10px;
 }
 
 #custom-pacman {
@@ -200,9 +236,10 @@ window#waybar {
 #mpd {
     border-radius: 5px 5px 5px 5px;
     color: @background;
-    animation: gradient 7s ease infinite;
-    background: linear-gradient(52deg, @color7 0%, @color2 19%, @color3 43%, @color4 56%, @coloe5 80%, @color6 100%);
-    background-size: 400% 400%;
+    /* background: linear-gradient(52deg, @color7 0%, @color2 19%, @color3 43%, @color4 56%, @coloe5 80%, @color6 100%); */
+    background: radial-gradient(circle, @color14 0%, @color15 6%, @color3 14%, @color4 14%, @color5 18%, @color6 28%, @color6 28%, @color7 58%, @color8 69%, @color9 69%, @color10 72%, @color11 73%, @color12 78%, @color13 100%); 
+    background-size: 600% 600%;
+    animation: gradient_f 9s cubic-bezier(.72, .39, .21, 1) infinite;
     padding: 5px 10px;
     margin: 5px 0px;
     margin-right: 10px;
@@ -231,3 +268,11 @@ window#waybar {
     margin: 5px 0px;
     margin-right: 10px;
 }
+#custom-bars {
+    margin-right: 10px;
+    border-radius: 0px 5px 5px 0px;
+}
+#custom-tile {
+    border-radius: 5px 0px 0px 5px;
+}
+
