@@ -77,7 +77,7 @@
   "custom/bars": {
           "format": " ",
           "interval": "once",
-          "on-click": "python ~/bin/bar-toggle.py"
+          "on-click": "~/bin/bar-toggle.py"
   },
 
   "custom/tile": {
